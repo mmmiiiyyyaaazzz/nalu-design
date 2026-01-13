@@ -1,0 +1,556 @@
+/* ===== Hamburger default（PCは非表示） ===== */
+.hamburger {
+  display: none;
+}
+
+/* ===== Overlay Menu（共通） ===== */
+.overlay-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 30, 0.6); /* 半透明 */
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.overlay-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-nav {
+  text-align: center;
+}
+
+.overlay-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.overlay-list li {
+  margin: 16px 0;
+}
+
+.overlay-list a {
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.overlay-cta {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+/* ===== SP ===== */
+@media (max-width: 768px) {
+
+  .global-nav,
+  .header-cta,
+  .header-butterflies {
+    display: none;
+  }
+
+  .header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #ededeb;
+  }
+}
+/* ===== Hamburger base ===== */
+.hamburger {
+  position: relative;
+}
+
+.hamburger span {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* 開いた状態：三本線は消える */
+.hamburger.is-open span {
+  opacity: 0;
+}
+
+/* × は疑似要素で“出る” */
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+/* 開いたら × が出る（回転は最小） */
+.hamburger.is-open::before {
+  opacity: 1;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.is-open::after {
+  opacity: 1;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.hamburger {
+  color: #ffffff; /* ← 三本線と同じ色にする */
+}
+.overlay-list a,
+.overlay-cta {
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 768px) {
+  .overlay-list a:active,
+  .overlay-cta:active {
+    color: #00bcd4;
+  }
+}
+@media (max-width: 768px) {
+  .overlay-cta:active {
+    color: #00bcd4;
+    border-color: #00bcd4;
+  }
+}
+/* ロゴ切り替え */
+.site-logo--sp {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .site-logo--pc {
+    display: none;
+  }
+  .site-logo--sp {
+    display: inline-block;
+  }
+}
+@media (max-width: 768px) {
+  .site-logo--sp img {
+    width: 62vw;
+    max-width: 220px;
+    height: auto;
+    margin-left: 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-wrap {
+    padding-right: 20px;
+    padding-left: 12px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* 構造は触らない */
+  .hero {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-inner {
+    width: 100%;
+    padding: 0 20px;
+    transform: translateY(84px); /* ← 中央から少し下へ */
+  }
+
+  .hero-title {
+    max-width: 520px;
+    margin-left: 6px; /* ← 左寄り */
+    text-align: left;
+    font-size: 24px;   /* 今より 2〜4px 下げる想定 */
+    line-height: 1.5;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 72px 0 88px; /* ← ここだけ調整 */
+  }
+}
+
+@media (max-width: 768px) {
+  .feature {
+    padding: 64px 0;
+  }
+
+  .feature-inner {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .feature .section-title,
+  .feature .feature-lead {
+    margin-left: 22px;
+  }
+}
+@media (max-width: 768px) {
+  .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .feature-item {
+    display: block;
+  }
+
+  .feature-item h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .feature-item p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* 大きい蝶（左下） */
+  .feature::after {
+    left: 6%;
+    bottom: 6%;
+  }
+
+  /* 小さい蝶（右上） */
+  .feature::before {
+    right: 6%;
+    top: 22%;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .feature .section-title {
+    margin-bottom: 36px; /* ← h2と説明文の距離を少し広げる */
+  }
+
+  .feature .feature-lead {
+    margin-bottom: 32px; /* ← リストとの区切りを明確に */
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  /* Serviceカードエリアだけ少し広げる */
+  .service .service-list {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+}
+@media (max-width: 768px) {
+  .service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+/* PCでは改行させない */
+.br-sp {
+  display: none;
+}
+
+/* SPだけ改行 */
+@media (max-width: 768px) {
+  .br-sp {
+    display: inline;
+  }
+}
+@media (max-width: 768px) {
+  .service .inner {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+}
+@media (max-width: 768px) {
+  .service .section-title {
+    margin-left: 22px;
+  }
+  .service {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* 通常時：蝶を一段奥に */
+  .service-item-inner::before {
+    opacity: 0.13; /* 0.22 × 約0.6 */
+  }
+
+  .service-item-inner::after {
+    opacity: 0.08; /* サブはさらに控えめ */
+  }
+
+  /* hover時：SPでは出すが、主張しすぎない */
+  .service-card:hover .service-item-inner::before {
+    opacity: 0.15;
+  }
+
+  .service-card:hover .service-item-inner::after {
+    opacity: 0.10;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* サブの蝶（左上）をほんの少し内側＆下へ */
+  .service-item-inner::after {
+    left: 2%;   /* -4% → 2% 相当の感覚 */
+    top: 0%;    /* -6% → 0% 相当の感覚 */
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* メインの蝶（右下）をほんのり小さく */
+  .service-item-inner::before {
+    width: 140px;   /* 160px → 140px */
+    height: 140px;
+    transform: scale(0.9) rotate(-14deg);
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  /* 見出し（入口） */
+  .service-item-inner h3 {
+    font-size: 17px;        /* ほんのり存在感 */
+    line-height: 1.35;
+    margin-bottom: 18px;   /* 視線を一段落とす余白 */
+    letter-spacing: 0.02em;
+  }
+
+  /* 説明文（落ち着き） */
+  .service-item-inner p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+}
+@media (max-width: 768px) {
+
+  /* Serviceカード：SPタップ時の反応 */
+  .service-card {
+    position: relative;
+  }
+
+  .service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px; /* カードの角丸と合わせる */
+    border: 1.5px solid #00bcd4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  /* タップ中（SP） */
+  .service-card:active::after {
+    opacity: 1;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .service-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .service-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+  /* About 全体の基準幅 */
+  .home .about .about-inner {
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* 見出し位置 
+  .home .about .section-title {
+    margin-left: 22px;
+  }*/
+
+  /* 説明文：inner幅に従属 */
+  .home .about .about-text {
+    max-width: none;
+    width: 100%;
+    margin: 0 0 24px;
+  }
+
+  /* CTA：説明文と同じ左基準 */
+  .home .about .about-link {
+    display: block;
+    margin: 0;
+  }
+
+}
+/* hoverが使えるデバイスのみ演出を有効にする */
+@media (hover: hover) and (pointer: fine) {
+  .about .about-link:hover::after {
+    animation: arrow-flow 1.6s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* ===== Contact 全体の基準幅（Aboutと揃える） ===== */
+  .contact-cta .inner {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== 見出し位置（Aboutと同じ基準） ===== 
+  .contact-cta .section-title {
+    margin-left: 22px;
+  }*/
+
+  /* ===== 説明文＋CTA：読み幅を280pxに揃える ===== */
+  .contact-cta .contact-cta-text {
+    max-width: 280px;
+    margin: 0 auto 24px;
+    text-align: left;
+  }
+
+  .contact-cta .contact-cta-text {
+    margin-top: 26px;
+    margin-bottom: 34px;
+
+  }
+
+  /* ===== ボタン：見た目はそのまま ===== */
+  .contact-cta .btn {
+    display: inline-block;   /* ← block にしない */
+    margin: 0 auto;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* ===== クリック時のみ反応（色は変えない） ===== */
+  .contact-cta .btn:active {
+    filter: brightness(0.92);
+  }
+  .contact-cta{
+    padding-top: 30px;
+  }
+}
+/* 初期状態（SP）：改行させない */
+.pc-only {
+  display: none;
+}
+
+/* PCのみ改行を有効にする */
+@media (min-width: 769px) {
+  .pc-only {
+    display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .site-footer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ===== 大きい蝶（左下・土台） ===== */
+  .site-footer::before {
+    content: "";
+    position: absolute;
+    left: -100px;
+    bottom: -80px;
+    width: 380px;
+    height: 380px;
+    background: url("../img/header/butterfly-white.png") no-repeat center / contain;
+    opacity: 0.075;           /* ← 0.06 → 少しだけ存在感 */
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ===== 小さい蝶（右下・余韻） ===== */
+  .site-footer::after {
+    content: "";
+    position: absolute;
+    left: 100px;
+    bottom: -36px;            /* © にかぶる前提 */
+    width: 150px;
+    height: 150px;
+    background: url("../img/header/butterfly-white.png") no-repeat center / contain;
+    opacity: 0.06;            /* ← 大きい蝶より一段控えめ */
+    pointer-events: none;
+    z-index: 0;
+    transform: rotate(6deg);
+  }
+
+  /* footer中身を前面に */
+  .site-footer .footer-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+}
+
+
