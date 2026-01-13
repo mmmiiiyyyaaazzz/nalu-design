@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <title>Nalu design</title>
+
+  <!-- CSS（あなたの構成に合わせて） -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+
+<body>
+<header class="site-header">
+  <div class="header-wrap">
+
+    <!-- PC用ロゴ -->
+    <a href="./" class="site-logo site-logo--pc">
+      <img src="./img/header/logo.png" alt="Nalu design">
+    </a>
+
+    <!-- SP用ロゴ -->
+    <a href="./" class="site-logo site-logo--sp">
+      <img src="./img/header/sp-logo.png" alt="Nalu design">
+    </a>
+
+    <div class="header-butterflies">
+      <img src="./img/header/butterfly-white.png" class="butterfly b1" alt="">
+      <img src="./img/header/butterfly-white.png" class="butterfly b2" alt="">
+      <img src="./img/header/butterfly-white.png" class="butterfly b3" alt="">
+      <img src="./img/header/butterfly-white.png" class="butterfly b4" alt="">
+    </div>
+
+    <nav class="global-nav">
+      <ul class="header-nav">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#service">Services</a></li>
+      </ul>
+    </nav>
+
+    <a href="#contact" class="header-cta btn">
+      お問い合わせ
+    </a>
+
+    <button class="hamburger"
+            aria-label="メニューを開く"
+            aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="overlay-menu" aria-hidden="true">
+      <div class="overlay-inner">
+        <nav class="overlay-nav">
+          <ul class="overlay-list">
+            <li><a href="#works">Works</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Services</a></li>
+          </ul>
+          <a href="#contact" class="overlay-cta">
+            お問い合わせ
+          </a>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="./img/hero/hero-cloud.png" alt="">
+  </div>
+  <div class="hero-inner">
+    <h1 class="hero-title">
+      淡く、強く、<br class="br-sp">
+      心に残るデザインを。
+    </h1>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="feature-inner">
+    <h2 class="section-title">Feature</h2>
+    <p class="feature-lead">
+    ご相談から公開、その後の運用まで。<br>
+    無理のない形で、丁寧に進めています。
+    </p>
+
+    <ul class="feature-list">
+      <li class="feature-item">
+        <h3>丁寧なヒアリング</h3>
+        <p>ご要望をそのまま形にするのではなく、背景や目的から整理します。</p>
+      </li>
+
+      <li class="feature-item">
+        <h3>修正・調整に強い</h3>
+        <p>公開後も微調整を前提に、納得感のある形まで伴走します。</p>
+      </li>
+
+      <li class="feature-item">
+        <h3>WordPress前提の設計</h3>
+        <p>更新しやすさ・運用しやすさを考えた構成で制作します。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="service">
+  <div class="inner">
+
+    <h2 class="section-title">Service</h2>
+
+    <div class="service-list">
+
+      <a href="#" class="service-card">
+        <div class="service-visual">
+          <img src="./img/service/service-web.jpg" alt="Webサイト制作">
+        </div>
+        <div class="service-item">
+          <div class="service-item-inner">
+            <h3>Webサイト制作</h3>
+            <p>企業サイト・個人事業主向けに、目的やターゲットに合わせたホームページの制作を行います。</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="service-card">
+        <div class="service-visual">
+          <img src="./img/service/service-wordpress.png" alt="WordPress構築">
+        </div>
+        <div class="service-item">
+          <div class="service-item-inner">
+            <h3>WordPress構築</h3>
+            <p>
+              更新しやすく、運用しやすい<br>
+              WordPressサイトを構築し、<br>
+              公開後の扱いやすさまで考えます。
+            </p>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="service-card">
+        <div class="service-visual">
+          <img src="./img/service/service-support.png" alt="保守・運用サポート">
+        </div>
+        <div class="service-item">
+          <div class="service-item-inner">
+            <h3>保守・運用サポート</h3>
+            <p>公開後の軽微な修正やバックアップ、更新作業などの保守サポートにも対応しています。</p>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /.service-list -->
+
+  </div><!-- /.inner -->
+</section>
+
+<section class="about">
+  <div class="about-inner">
+    <h2 class="section-title">About</h2>
+
+    <p class="about-text">
+      Nalu design は、フリーランスのWebデザイナーが運営しています。ヒアリングから公開後の調整まで、一つひとつ丁寧に向き合うことを大切にしています。
+    </p>
+
+    <a href="#" class="about-link">
+      制作者について詳しく見る
+    </a>
+  </div>
+</section>
+
+<section class="contact-cta" id="contact">
+  <div class="inner">
+    <h2 class="section-title">制作のご相談はこちら</h2>
+    <p class="contact-cta-text">
+      Web制作・WordPress構築・既存サイトの修正など、<br class="pc-only">
+      内容が固まっていない場合でも、お気軽にご相談ください。
+    </p>
+    <a href="#" class="btn">
+      お問い合わせフォームへ
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="sparkle"></div>
+
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <ul class="footer-nav">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#service">Service</a></li>
+      </ul>
+    </nav>
+
+    <p class="copyright">© 2026 Naludesign</p>
+  </div>
+</footer>
+
+<button id="page-top" class="page-top" aria-label="ページトップへ">
+  ↑
+</button>
+
+<script src="./script.js"></script>
+</body>
+</html>
