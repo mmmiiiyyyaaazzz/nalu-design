@@ -135,3 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loading = document.getElementById('loading');
+  if (!loading) return;
+
+  const hasLoaded = sessionStorage.getItem('hasLoaded');
+
+  if (hasLoaded) {
+    // 2回目以降：即非表示
+    loading.style.display = 'none';
+  } else {
+    // 初回：ローディングを表示
+    sessionStorage.setItem('hasLoaded', 'true');
+  }
+});
